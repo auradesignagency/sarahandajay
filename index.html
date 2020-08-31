@@ -145,6 +145,27 @@ text-align: -webkit-center;
   <a href="http://www.livewedding.org/sarahwedsajay" class="link"><h2>Click Here</h2></a>
   </div>
   </div>
-  <input type="submit" class="button button1" id="btn1" onclick="sharelink();" name="Share" value="Share">
-</body>
+  <input type="submit" class="button button1" id="button"  name="Share" value="Share">
+  
+  
+  
+  
+   <script>
+    const $button = document.querySelector('#button')
+    if ('share' in navigator) {
+      $button.addEventListener('click', share)
+      function share() {
+        navigator.share({
+          title: '',
+          text: '',
+          url: 'http://pavanroopghar.auradesignagency.com/',
+        })
+        .then(()=>{
+          alert('Not  supported u browser')
+        })
+        .catch(()=>{
+                })
+      }
+    } 
+  </script></body>
 </html>
